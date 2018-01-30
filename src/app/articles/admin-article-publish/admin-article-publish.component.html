@@ -1,0 +1,11 @@
+<div class="row" appOpenOnHover>
+  <span class="label " [ngClass]="article.publishState == 'Published'?'label-success':'label-danger'"></span>
+  <button class="btn" [ngClass]="article.publishState == 'Published'?'btn-success':'btn-danger'">{{article.publishState}}</button>
+  <div class="componentToBeOpened" *ngIf="article.publishState != 'Published'">  
+    <button class="btn btn-success" (click)="onPublish()">Publish</button>
+  </div>
+  <div class="componentToBeOpened" *ngIf="article.publishState == 'Published'">  
+    <button class="btn btn-danger" (click)="onUnPublish()">Unpublish</button>
+  </div>
+
+</div>

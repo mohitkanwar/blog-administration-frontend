@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-10 col-md-6" *ngFor="let blog of user.blogs">
+        <a >
+          <div class="panel">
+            <div class="panel-heading">{{blog.title}} </div>
+            <div class="panel-body">{{blog.description}}</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>

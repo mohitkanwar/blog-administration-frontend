@@ -1,0 +1,58 @@
+
+<div class="alert alert-success" role="alert" *ngIf="successMessage!=''">{{successMessage}}</div>
+<form  class="form-group" (ngSubmit)="onAddArticle(f)" #f="ngForm">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      id="title" 
+      placeholder="Title" 
+      value=""
+      name="title"
+      [(ngModel)]="newArticleTitle"
+      required
+      (change)="onTitleChange()"
+      />
+  </div>
+  <div class="form-group">
+    <label for="id">id</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      id="id" 
+      placeholder="id" 
+      value=""
+      name="id"
+      [(ngModel)]="newArticleId"
+      required
+      />
+  </div>
+  <div class="form-group">
+    <label for="text">Summary</label>
+    <textarea 
+      type="text" 
+      class="form-control" 
+      id="text" 
+      placeholder="summary" 
+      value=""
+      name="summary"
+      ngModel
+      required
+      ></textarea>
+  </div>
+  <div class="form-group">
+    <label for="text">Article Text</label>
+    <textarea 
+      type="text" 
+      class="form-control" 
+      id="text" 
+      placeholder="Article Text" 
+      value=""
+      name="articleText"
+      ngModel
+      required
+      ></textarea>
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Add Article</button>
+</form>

@@ -1,0 +1,21 @@
+<app-admin-article-publish [article]="article"></app-admin-article-publish>
+<h1 (dblclick)="onEdit(title)" *ngIf="!isEditMode">{{article.title}}</h1>
+<input type="text" [(ngModel)]="article.title" *ngIf="isEditMode" class="h1 maxWidth" (change)="onSave()" (focusout)="onFocusOut()" #title/>
+
+<p><i>{{article.lastModificationDate | date:'longDate'}}</i></p>
+<p (dblclick)="onEdit('articleText')" *ngIf="!isEditMode" [innerHTML]="article.articleText">
+</p>
+<textarea class="p maxWidth textBody" *ngIf="isEditMode" [(ngModel)]="article.articleText" (change)="onSave()" (focusout)="onFocusOut()">
+</textarea>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    Summary
+  </div>
+  <div class="panel-body" (dblclick)="onEdit('articleSummary')" *ngIf="!isEditMode" [innerHTML]="article.summary">
+  </div>
+  <div class="panel-body" (dblclick)="onEdit('articleSummary')" *ngIf="isEditMode">
+    <textarea class="p maxWidth textBody" *ngIf="isEditMode" [(ngModel)]="article.summary" (change)="onSave()" (focusout)="onFocusOut()">
+    </textarea>
+  </div>
+</div>
+

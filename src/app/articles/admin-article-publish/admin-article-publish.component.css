@@ -1,0 +1,9 @@
+
+
+.componentToBeOpened{
+    display: none;
+}
+
+.open .componentToBeOpened{
+    display: inline;
+}
